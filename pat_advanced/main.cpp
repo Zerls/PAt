@@ -8,12 +8,7 @@
 #include "pat_advanced.h"
 
 int main() {
-    
-    int buket =10000,n;
-    string str="hell";
-    n= BKDRHash(str) % buket;
-    printf("%d\n",n);
-//    rational_sum();
+    i1046();
     
     return 0;
 }
