@@ -18,6 +18,7 @@ int i1015();
 int i1042();
 int i1046();
 int i1065();
+int i1027();
 unsigned int BKDRHash(string &);
 int rational_sum();
 long long gcd(long long,long long);
