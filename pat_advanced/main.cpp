@@ -8,7 +8,7 @@
 #include "pat_advanced.h"
 
 int main() {
-    i1006();
+    i1053();
     
     return 0;
 }
