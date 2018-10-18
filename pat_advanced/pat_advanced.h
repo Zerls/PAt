@@ -12,6 +12,7 @@
 #include <string>
 using namespace std;
 
+int i1003();
 int i1008();
 int i1011();
 int i1015();
