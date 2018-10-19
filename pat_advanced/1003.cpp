@@ -25,7 +25,7 @@ void input(bool test,string str){
         printf("==test==\n");
     }
     fill(diss,diss+N,INF);
-    fill(e[0],e[0]+N*N,INF);
+    fill(e[0],e[0]+N*N,INF); //知识点 二维数组填充
     scanf("%d %d %d %d",&n,&m,&c1,&c2);
     for(int i = 0;i < n;i++)
         scanf("%d",&weight[i]);

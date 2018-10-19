@@ -21,3 +21,11 @@ unsigned int BKDRHash(string & str) {
 
 long long gcd(long long a,long long b)  { return b==0 ? abs(a): gcd(b,a%b); }
 int gcd(int a,int b){ return  b==0 ? abs(a): gcd(b,a%b); }
+
+
+void test(bool test,string str){
+    if(test){
+        freopen(str.c_str(),"r",stdin);
+        printf("==test==\n");
+    }
+}
