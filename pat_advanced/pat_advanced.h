@@ -12,22 +12,13 @@
 #include <string>
 using namespace std;
 
-//int i1003();
-//int i1008();
-//int i1011();
-//int i1015();
-//int i1042();
-//int i1046();
-//int i1065();
-//int i1027();
-//int i1035();
-//int i1009();
-//int i1006();
-//int i1019();
-//int tree();
-//int i1053();
-//int i1101();
-int i1004();
+/*
+ i1023
+ i1007
+ i1010
+ 
+ */
+int i1023();
 unsigned int BKDRHash(string &);
 int rational_sum();
 long long gcd(long long,long long);

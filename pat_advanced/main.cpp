@@ -8,8 +8,8 @@
 #include "pat_advanced.h"
 
 int main() {
-    test(1,"TestSet/1004.txt");
-    i1004();
+    test(1,"TestSet/1023.txt");
+    i1023();
     
     return 0;
 }
