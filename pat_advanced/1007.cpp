@@ -31,13 +31,14 @@ int i1007_1(){
             last=i;
         }
     }
-    if(flag == false) {
+     int num=dp[last],first =last;
+    if(num<0&&flag == false) {
         cout <<0<<" "<<A[0]<<" "<<A[k-1]<<endl;
         return 0;
     }
-    int num=dp[last],first =last;
     while(num)
         num-=A[first--];
+    if(num==0) first-=1;
     cout <<dp[last]<<" "<<A[first+1]<<" "<<A[last]<<endl;
     return 0;
 }
