@@ -27,7 +27,7 @@ bool isPrime (int n) {
     return true;
 }
 
-int i1015() {
+int i1015() { 
     freopen("1015.txt","r",stdin);
     int n,d;
     while (1) {

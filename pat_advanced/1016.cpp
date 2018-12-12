@@ -24,10 +24,11 @@ bool cmp_1016(const node_1016 &a,const node_1016 &b) {
 }
 
 double bill(node_1016 & call,int rate[]){
-    double fee =rate[call.hour]*call.minute+rate[24]*60*call.day;
+    //计算从该时刻 -0:0:0的累积费用
+    double fee =rate[call.hour]*call.minute + rate[24]*60*call.day;
     for (int i=0; i<call.hour; ++i)
         fee +=rate[i]*60;  //P
-    return fee/100.0;
+    return fee/100.0; //cent->$
 }
 
 int i1016(){
@@ -53,12 +54,12 @@ int i1016(){
     
     sort(data.begin(), data.end(), cmp_1016);
     map<string, vector<node_1016>> customer;
-    for (int i=0; i<n; ++i) {
+    for (int i=1; i<n; ++i) {
         if(data[i].name == data[i-1].name
-           && data[i].status == 0
-           && data[i-1].status == 1){
-            customer[data[i-1].name].push_back(data[i-1]);//P
-            customer[data[i-1].name].push_back(data[i]);//P
+            && data[i].status == 0
+            && data[i-1].status == 1) {
+                customer[data[i-1].name].push_back(data[i-1]);//P
+                customer[data[i-1].name].push_back(data[i]);//P
         }
     }
     
