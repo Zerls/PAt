@@ -13,7 +13,7 @@
 using namespace std;
 
 
-int i1017();
+int i1021();
 unsigned int BKDRHash(string &);
 int rational_sum();
 long long gcd(long long,long long);

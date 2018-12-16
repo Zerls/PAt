@@ -18,7 +18,7 @@ int i1002(){
     cin >> in_count;
     while (in_count--) {
         cin >> exp >> coe;
-        polys.count(exp)==1?polys[exp]+=coe:polys[exp]=coe;
+        polys.count(exp)==1 ? polys[exp]+=coe : polys[exp]=coe;
         polys[exp]==0?polys.erase(exp):0;
     }
     cout << polys.size();

@@ -14,7 +14,7 @@ unsigned int BKDRHash(string & str) {
     unsigned int hash = 0;
     
     for (int i = 0; i<str.length(); i++)
-        hash = hash * seed + (str[i]);
+        hash = hash * seed + str[i];
     
     return (hash & 0x7FFFFFFF);
 }
