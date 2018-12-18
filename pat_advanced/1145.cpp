@@ -47,6 +47,7 @@ int i1145(){
 //        P:    for (int j=0; j<msize; ++j) { ??
             int pos =(a+j*j)%msize;
             ans++;
+//            if(a==11) printf("ans: %d\n",ans);
           //  if(a==15) printf("%d",j);
             if(v[pos]==a||v[pos]==0) break;
         }
