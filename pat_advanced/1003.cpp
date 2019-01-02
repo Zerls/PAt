@@ -15,8 +15,8 @@ using namespace std;
 //#define N 510
 const int N=510;
 const int INF=0x3fffffff;
-int n,m,c1,c2;
-int e[N][N],diss[N],w[N],weight[N],num[N];
+static int n,m,c1,c2;
+static int e[N][N],diss[N],w[N],weight[N],num[N];
 bool visit[N];
 
 void input(bool test,string str){
