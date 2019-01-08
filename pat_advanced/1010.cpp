@@ -41,7 +41,7 @@ long long find_radix(string str,long long num){
 }
 
 int i1010(){
-//    printf("%lld\n",convert("11111", 1));
+//  printf("%lld\n",convert("11111", 1));
     string n1, n2;
     long long tag = 0, radix = 0, result_radix;
     cin >> n1 >> n2 >> tag >> radix;

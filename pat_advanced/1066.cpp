@@ -53,7 +53,7 @@ node *insert(node *root, int val) {
     }
     return root;
 }
-int main() {
+int i1066() {
     int n, val;
     scanf("%d", &n);
     node *root = NULL;
