@@ -27,14 +27,13 @@ void dfs(int node){
 int i1013(){
     int m,k,a,b;
     scanf("%d%d%d",&n,&m,&k);
-    
     for (int i=0; i<m; ++i) {
         scanf("%d%d",&a,&b);
         v[a][b]=v[b][a]=1;
     }
     
     for(int i=0;i<k;++i){
-        fill(visited, visited+n+1, false); //初始化遍历
+        fill(visited, visited+1010, false); //初始化遍历
 //        fill(visit, visit + 1010, false);
         scanf("%d",&a);
         int cnt =0;
