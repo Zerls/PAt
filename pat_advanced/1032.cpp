@@ -19,7 +19,7 @@ int i1032(){
     char b;
     scanf("%d%d%d",&begin1,&begin2,&n);
     for (int i=0; i<n; ++i) {
-        scanf("%d %c %d",&a,&b,&c);
+        scanf("%d %c %d",&a,&b,&c); //
         node_1032[a]={b,c,false};
     }
     for (; begin1 !=-1; begin1=node_1032[begin1].next)
