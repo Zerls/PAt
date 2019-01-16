@@ -9,7 +9,6 @@
 
 #include <iostream>
 #include <algorithm>
-#include <unordered_map>
 #include <vector>
 using namespace std;
 static vector<string> courses[2505];
@@ -28,9 +27,8 @@ int i1047(){
     for (int i=1; i<=k; ++i) {
         printf("%d %d\n",i,(int)courses[i].size());
         sort(courses[i].begin(),courses[i].end());
-        for (int j=0; j<courses[i].size(); ++j) {
+        for (int j=0; j<courses[i].size(); ++j)
             printf("%s\n",courses[i][j].c_str());
-        }
     }
     return 0;
 }
