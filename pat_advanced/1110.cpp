@@ -1,11 +1,11 @@
 //
-// 1110.cpp 
-// pat 
-// 
-// Created by zerl on 2019/1/14. 
+// 1110.cpp
+// pat
+//
+// Created by zerl on 2019/1/14.
 // Github: https://github.com/zerls
-// Copyright © 2019年 zerl. All rights reserved. 
-// 
+// Copyright © 2019年 zerl. All rights reserved.
+//
 
 #include <iostream>
 using namespace std;
