@@ -1,11 +1,11 @@
 //
-// 1130.cpp 
-// pat 
-// 
-// Created by zerl on 2019/1/17. 
+// 1130.cpp
+// pat
+//
+// Created by zerl on 2019/1/17.
 // Github: https://github.com/zerls
-// Copyright © 2019年 zerl. All rights reserved. 
-// 
+// Copyright © 2019年 zerl. All rights reserved.
+//
 
 //#include <iostream>
 //#include <cctype>
