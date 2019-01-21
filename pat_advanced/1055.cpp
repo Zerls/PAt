@@ -6,22 +6,22 @@
 // Github: https://github.com/zerls
 // Copyright © 2019年 zerl. All rights reserved. 
 // 
-
+//
 #include <iostream>
 #include <vector>
 #include <algorithm>
 using namespace std;
-struct node{
+struct node_1055{
     string name;
     int age,net_north;
 };
-static bool cmp1(node &a,node &b){
+static bool cmp1(node_1055 &a,node_1055 &b){
     if(a.net_north != b.net_north){
         return a.net_north > b.net_north;
     }else
         return   a.age != b.age ? a.age <b.age : a.name <b.name; //  a.age != b.age ? a.age <b.age : a.name <=b.name;
 }
-static vector<node> vt,v,fin;
+static vector<node_1055> vt,v,fin;
 static vector<int> book(205,0);
 int i1055(){
     int n,k,m,min_age,max_age;
@@ -33,7 +33,7 @@ int i1055(){
     }
     sort(vt.begin(),vt.end(),cmp1);
     for (int i=0; i<n; ++i) {
-        if(book[vt[i].age] < 100) { //
+        if(book[vt[i].age] < 100) { //剪枝
             v.push_back(vt[i]);
             book[vt[i].age]++;
         }
@@ -42,7 +42,7 @@ int i1055(){
         fin.clear();
         scanf("%d %d %d",&m,&min_age,&max_age);
         printf("Case #%d:\n",i);
-        for (int j=0; j<v.size(); ++j) {
+        for (int j=0; j<v.size() &&fin.size()<=m; ++j) { //fin.size()<=m  剪枝
             if(v[j].age >= min_age && v[j].age <= max_age)
                 fin.push_back(v[j]);
         }
@@ -52,3 +52,7 @@ int i1055(){
     }
     return 0;
 }
+
+//n,m左右数据相差过大，不建议新开数组
+
+
