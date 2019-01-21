@@ -12,13 +12,13 @@
 #include <map>
 using namespace std;
 
-struct node {
+struct node_0 {
     int id,best;
     int score[4],rank[4];
 } stu[2005];
 map<int,int> exist;
 int flag = -1 ;
-bool cmp1(node a,node b){return a.score[flag] > b.score[flag];}
+bool cmp1(node_0 a,node_0 b){return a.score[flag] > b.score[flag];}
 
 int i1012() {
     int n, m, id;

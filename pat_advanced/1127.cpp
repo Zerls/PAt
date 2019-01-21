@@ -13,7 +13,7 @@
 using namespace std;
 static int n,root,tree[35][2];
 static vector<int> result[35],in,post;
-struct node{
+struct node_0{
     int index,depth;
 };
 static void dfs(int &index, int inLeft, int inRight, int postLeft, int postRight) { //△△△
@@ -25,14 +25,14 @@ static void dfs(int &index, int inLeft, int inRight, int postLeft, int postRight
     dfs(tree[index][1], i+1, inRight, postLeft+(i-inLeft), postRight-1);
 }
 static void bfs() {
-    queue<node> q;
-    q.push(node{root,0});
+    queue<node_0> q;
+    q.push(node_0{root,0});
     while (!q.empty()) {
-        node t =q.front();
+        node_0 t =q.front();
         q.pop();
         result[t.depth].push_back(post[t.index]); // result[t.depth].push_back(t.index);
-        if(tree[t.index][0] !=0) q.push(node{tree[t.index][0],t.depth+1});
-        if(tree[t.index][1] !=0) q.push(node{tree[t.index][1],t.depth+1});
+        if(tree[t.index][0] !=0) q.push(node_0{tree[t.index][0],t.depth+1});
+        if(tree[t.index][1] !=0) q.push(node_0{tree[t.index][1],t.depth+1});
     }
 }
 int i1127() {

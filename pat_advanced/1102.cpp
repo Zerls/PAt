@@ -11,16 +11,16 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-struct node{
+struct node_0{
     int id,l,r,index,level;
 };
-static vector<node> v,v1,v2;
+static vector<node_0> v,v1,v2;
 static void dfs(int root,int index,int level){
     if(v[root].r !=-1) dfs(v[root].r,index*2+2,level+1);
     v1.push_back({root,0,0,index,level});
    if(v[root].l !=-1)  dfs(v[root].l,index*2+1,level+1);
 }
-static bool cmp1(node a,node b){
+static bool cmp1(node_0 a,node_0 b){
     if(a.level != b.level)  return a.level < b.level;
     return a.index > b.index; // return a.index < b.index;
 }

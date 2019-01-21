@@ -12,7 +12,7 @@
 #include <vector>
 using namespace std;
 
-struct node {
+struct node_0 {
     int poptime,endtime;
     queue<int> q;
 };
@@ -25,7 +25,7 @@ int i1014(){
     for (int i=1; i<=k; ++i) { //i=1
         scanf("%d",&time[i]);
     }
-    vector<node> windows(n+1);
+    vector<node_0> windows(n+1);
     vector<bool> sorry(k+1,false);
     
     for (int i=1; i<=m; ++i) {

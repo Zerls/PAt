@@ -43,7 +43,7 @@
 //}
 #include <iostream>
 using namespace std;
-struct node {
+struct node_0 {
     string data;
     int l, r;
 }a[100];

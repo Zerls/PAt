@@ -9,35 +9,35 @@
 
 #include <iostream>
 using namespace std;
-struct node {
+struct node_0 {
     int val;
-    struct node *left, *right;
+    struct node_0 *left, *right;
 };
-node *rotateLeft(node *root) {
-    node *t = root->right;
+node_0 *rotateLeft(node_0 *root) {
+    node_0 *t = root->right;
     root->right = t->left;
     t->left = root;
     return t; }
-node *rotateRight(node *root) {
-    node *t = root->left;
+node_0 *rotateRight(node_0 *root) {
+    node_0 *t = root->left;
     root->left = t->right;
     t->right = root;
     return t; }
-node *rotateLeftRight(node *root) {
+node_0 *rotateLeftRight(node_0 *root) {
     root->left = rotateLeft(root->left);
     return rotateRight(root);
 }
-node *rotateRightLeft(node *root) {
+node_0 *rotateRightLeft(node_0 *root) {
     root->right = rotateRight(root->right);
     return rotateLeft(root);
 }
-int getHeight(node *root) {
+int getHeight(node_0 *root) {
     if(root == NULL) return 0;
     return max(getHeight(root->left), getHeight(root->right)) + 1;
 }
-node *insert(node *root, int val) {
+node_0 *insert(node_0 *root, int val) {
     if(root == NULL) {
-        root = new node();
+        root = new node_0();
         root->val = val;
         root->left = root->right = NULL;
     } else if(val < root->val) {
@@ -56,7 +56,7 @@ node *insert(node *root, int val) {
 int i1066() {
     int n, val;
     scanf("%d", &n);
-    node *root = NULL;
+    node_0 *root = NULL;
     for(int i = 0; i < n; i++) {
         scanf("%d", &val);
         root = insert(root, val);

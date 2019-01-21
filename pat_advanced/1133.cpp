@@ -9,14 +9,14 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-struct node{
+struct node_0{
     int addr,data,next;
 };
 int i1133(){
     int begin,n,k,ta,td,tn;
-    node a[100010];
+    node_0 a[100010];
     scanf("%d%d%d",&begin,&n,&k);
-    vector<node> ans,v;
+    vector<node_0> ans,v;
     for (int i=0; i<n; ++i) {
         scanf("%d%d%d",&ta,&td,&tn);
         a[ta] = {ta,td,tn};
