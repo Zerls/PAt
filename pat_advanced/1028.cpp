@@ -17,12 +17,21 @@ struct node_1028{
 };
 static int n,c;
 static vector<node_1028> v;
+//看清题目比较条件
 static bool cmp1(node_1028 &a,node_1028 &b){
     if(c==1){
         return  a.id <b.id;
+    }else if(c==2){
+        return (a.name !=b.name) ? a.name <b.name: a.id <b.id ;
     }else
-        return (c==2) ? a.name <=b.name: a.score <=b.score ; // return (c==2) ? a.name <b.name: a.score <b.score ;
+        return (a.score !=b.score) ? a.score <b.score: a.id <b.id ;
 }
+//static bool cmp1(node_1028 &a,node_1028 &b){
+//    if(c==1){
+//        return  a.id <b.id;
+//    }else
+//        return (c==2) ? a.name <=b.name: a.score <=b.score ; // return (c==2) ? a.name <b.name: a.score <b.score ;
+//}
 int i1028(){
     scanf("%d%d",&n,&c);
     v.resize(n);

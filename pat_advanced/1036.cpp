@@ -32,7 +32,9 @@ int i1036(){
     return 0;
 }
 
-
+/**
+ 判断条件前后一致 boy.grade==0x3fffffff) boy={"","",101};
+ **/
 //int main(){
 //    int n,tgrade;
 //    string tn,tg,tid;
