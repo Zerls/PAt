@@ -11,17 +11,17 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-struct node{
+struct node_1109{
     string name;
     int h;
 };
-static bool cmp1(node &a,node &b){
+static bool cmp1(node_1109 &a,node_1109 &b){
     return a.h !=b.h ? a.h>b.h: a.name <b.name;
 }
 int i1109(){
     int n,k;
     scanf("%d %d",&n,&k);
-    vector<node> v(n);
+    vector<node_1109> v(n);
     for (int i=0; i<n; ++i) {
         v[i].name.resize(9);
         scanf("%s %d",&v[i].name[0],&v[i].h);

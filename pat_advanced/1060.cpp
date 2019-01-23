@@ -11,36 +11,34 @@
 #include <string>
 using namespace std;
 int n;
-string deal(string s, int& e) {
-    
-    while(s.length() > 0 && s[0] == '0') {
-         s.erase(s.begin());
-//         s= s.substr(0); 超时
-    }
-    if(s[0] == '.') {
+static string deal(string s, int& e) {
+
+    while (s.size()>0 && s[0]=='0') {
         s.erase(s.begin());
-        while(s.length() > 0 && s[0] == '0') {
+    }
+    if(s[0]=='.'){
+        s.erase(s.begin());
+        while (s.size()>0 && s[0]=='0') { //while (s.size()>0 && s[0]!='0') {
             s.erase(s.begin());
             e--;
         }
-    } else{
-        int k = 0;
-        while(k < s.length() && s[k] != '.') {
+    }else{
+        int k=0;
+        while (k<s.size() && s[k]!='.') { //while (s.size()>0 && s[0]!='.') {
+           // s.erase(s.begin());
             k++;
             e++;
         }
-        if(k < s.length()) {
-            s.erase(s.begin() + k);
-        }
+        if(k <s.size()) s.erase(s.begin()+k);
     }
-    if(s.length() == 0) {
-        e = 0;
-    }
-    int num = 0,k = 0;
+    if(s.size()==0) e=0;
     string res;
-    while(num < n) {
-        if(k < s.length()) res += s[k++];
-        else res += '0';
+    int num=0,k=0;
+    while (num <n) {
+        if(k<s.size()) //if(k<n)
+            res+=s[k++];
+        else
+            res+='0';
         num++;
     }
     return res;
