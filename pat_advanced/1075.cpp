@@ -11,12 +11,12 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-struct node{
+struct node_1075{
     int rank,id,total_score,pass_num,isshown;
     vector<int> p;
 };
-static vector<node> v;
-static bool cmp1(node &a,node &b){
+static vector<node_1075> v;
+static bool cmp1(node_1075 &a,node_1075 &b){
     if(a.total_score !=b.total_score){
         return    a.total_score>b.total_score;
     }else {
