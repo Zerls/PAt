@@ -6,7 +6,81 @@
 // Github: https://github.com/zerls
 // Copyright © 2019年 zerl. All rights reserved. 
 // 
-//
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cstring>
+#include <string>
+#include <map>
+using namespace std;
+struct node{
+    string id;
+    int time,flag=0;
+};
+static bool cmp1(node &a,node &b){
+    if(a.id!=b.id )
+        return a.id<b.id ;
+    else
+        return a.time < b.time;
+}
+static bool cmp2(node &a,node &b){
+    return a.time < b.time;
+}
+
+int i1095(){
+    int n,k,maxtime = -1,tempindex=0;
+    scanf("%d%d\n",&n,&k);
+    vector<node> record(n),car;
+    for (int i =0; i< n; ++i) {
+        char temp[5];
+        int h,m,s;
+        record[i].id.resize(10);
+        scanf("%s %d:%d:%d %s\n",&record[i].id[0],&h,&m,&s,temp);
+        int temptime =h*3600+m*60+s;
+        record[i].time = temptime;
+        record[i].flag = strcmp(temp,"in") == 0? 1:-1;
+    }
+    sort(record.begin(), record.end(), cmp1);
+    map<string,int> mapp;
+    for (int i=0; i<n-1; ++i) {
+        if(record[i].id==record[i+1].id
+           && record[i].flag ==1
+           && record[i+1].flag==-1){
+            car.push_back(record[i]);
+            car.push_back(record[i+1]);
+            mapp[record[i].id] +=(record[i+1].time-record[i].time);
+            if(maxtime < mapp[record[i].id]){
+                maxtime = mapp[record[i].id];
+            }
+        }
+    }
+    sort(car.begin(),car.end(),cmp2);
+    vector<int> cnt(n);
+    cnt[0] +=car[0].flag;
+    for (int i=1; i<car.size(); ++i)
+            cnt[i] =cnt[i-1]+car[i].flag;
+    
+    for (int i=0; i<k; ++i) {
+        int h,m,s;
+        scanf("%d:%d:%d",&h,&m,&s);
+        int j,temptime =h*3600+m*60+s;
+        for (j=tempindex; j<car.size(); ++j) {
+            if(car[j].time > temptime){
+                printf("%d\n",cnt[j-1]);
+                break;
+            }else if(j==car.size()-1){
+                printf("%d\n",cnt[j]);
+            }
+        }
+        tempindex=j;
+    }
+    for (auto it=mapp.begin(); it!=mapp.end(); it++)
+        if(it->second == maxtime) printf("%s ",it->first.c_str());
+     printf("%02d:%02d:%02d",maxtime/3600,(maxtime %3600)/60,maxtime%60);
+    return 0;
+}
+
 //#include <cstdio>
 //#include <cstring>
 //#include <string>

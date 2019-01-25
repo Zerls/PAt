@@ -13,7 +13,7 @@
 using namespace std;
 
 //#define N 510
-const int N=510;
+static const int N=510;
 const int INF=0x3fffffff;
 static int n,m,c1,c2;
 static int e[N][N],diss[N],w[N],weight[N],num[N];
