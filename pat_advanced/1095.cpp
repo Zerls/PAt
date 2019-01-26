@@ -11,8 +11,8 @@
 #include <vector>
 #include <algorithm>
 #include <cstring>
-#include <string>
 #include <map>
+#include <cmath>
 using namespace std;
 struct node{
     string id;
@@ -50,9 +50,7 @@ int i1095(){
             car.push_back(record[i]);
             car.push_back(record[i+1]);
             mapp[record[i].id] +=(record[i+1].time-record[i].time);
-            if(maxtime < mapp[record[i].id]){
-                maxtime = mapp[record[i].id];
-            }
+            maxtime=max(maxtime,mapp[record[i].id]);
         }
     }
     sort(car.begin(),car.end(),cmp2);
@@ -80,6 +78,18 @@ int i1095(){
      printf("%02d:%02d:%02d",maxtime/3600,(maxtime %3600)/60,maxtime%60);
     return 0;
 }
+
+/**伪代码
+ in->data(id,time,in/out)
+ sortdata->(id>,time<)
+ datadeal->vaild_data( a car in&out record success){
+    record maxtime & maxtime_car_list
+ }
+ count->(car_num in  a car in/out_time)
+ inquire->(car_num in a time)
+ out <- maxtime_car_list,maxtime
+**/
+
 
 //#include <cstdio>
 //#include <cstring>
