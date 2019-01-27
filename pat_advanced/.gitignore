@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io/api/c++,xcode,osx
 # custom
+.vscode
 main.cpp
 pat_advanced.h
 ### C++ ###
