@@ -10,8 +10,6 @@ unordered_map<int,unordered_set<int>> v;
 map<int,set<int> > ma;
 set<int> suspect;
 int main(){
-    freopen("in.txt","r",stdin);
-    freopen("out.txt","w",stdout);
     scanf("%d %d %d",&k,&n,&m);
     b_k=0.2*k;
     for(int i=0;i<m;++i){
@@ -27,7 +25,7 @@ int main(){
                 if(e[*its ][it->first] >0) call_back++;    
             }
         } 
-        if(short_call >k && call_back <=b_k)
+        if(short_call > k && call_back <= b_k)
             suspect.insert(it->first); 
     }
     if(suspect.size() ==0) {
@@ -54,4 +52,4 @@ int main(){
         printf("\n");
     }
     return 0;
-} 
+}
