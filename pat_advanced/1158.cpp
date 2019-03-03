@@ -5,14 +5,15 @@
 #include <unordered_set>
 using namespace std;
 const int N=1005;
-int k,b_k,n,m,e[N][N],tcal,trec,tdur，pres=0;
+int k,b_k,n,m,e[N][N],tcal,trec,tdur,pres=0;
 unordered_map<int,unordered_set<int>> v;
-map<int,set<int>> ma;
+map<int,set<int> > ma;
 set<int> suspect;
 int main(){
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
     scanf("%d %d %d",&k,&n,&m);
     b_k=0.2*k;
-    
     for(int i=0;i<m;++i){
         scanf("%d %d %d",&tcal,&trec,&tdur);
         v[tcal].insert(trec);
@@ -33,13 +34,19 @@ int main(){
         printf("None\n");
         return 0;
     }
-    for(auto it=suspect.begin() ;it!=suspect.end();++it){
+    auto it=suspect.end();
+    while((int)suspect.size()!=0){
+        if(it==suspect.end()){
+            it=suspect.begin();
+            pres=*it;
+            ma[*it].insert(*it);
+    		suspect.erase(it++);
+    		if(it==suspect.end()) break;
+        }
         if(e[pres][*it]>0&&e[*it][pres]>0){
             ma[pres].insert(*it);
-        }else{
-            ma[*it].insert(*it);
-            pres=*it;
-        }0
+            suspect.erase(it++);
+        }else  it++;
     }
     for(auto it=ma.begin() ;it!=ma.end();++it){
         for(auto its=it->second.begin();its!=it->second.end();its++)
